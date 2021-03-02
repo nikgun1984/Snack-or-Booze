@@ -10,12 +10,17 @@ const BASE_API_URL = "http://localhost:5000";
 */
 
 class SnackOrBoozeApi {
+	static async getSnacks() {
+		/*Snacks API loading from local db*/
+		const result = await axios.get(`${BASE_API_URL}/snacks`);
+		return result.data;
+	}
 
-  static async getSnacks() {
-    const result = await axios.get(`${BASE_API_URL}/snacks`);
-    return result.data;
-  }
-
+	static async getDrinks() {
+		/*Drinks API loading from local db*/
+		const result = await axios.get(`${BASE_API_URL}/drinks`);
+		return result.data;
+	}
 }
 
 export default SnackOrBoozeApi;
